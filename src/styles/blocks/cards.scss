@@ -1,32 +1,38 @@
+$card-width: 200px;
+
 .product-list {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 200px;
+  grid-template-columns: $card-width;
   justify-content: center;
   gap: 46px 48px;
   padding: 50px 40px;
 
   @media (min-width: 488px) {
-    grid-template-columns: 200px 200px;
+    grid-template-columns: $card-width $card-width;
   }
 
   @media (min-width: 768px) {
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: $card-width $card-width $card-width;
   }
 
   @media (min-width: 1024px) {
-    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-columns: $card-width $card-width $card-width $card-width;
   }
 }
 
 .card {
+  position: relative;
   border: 1px solid #f3f3f3;
   border-radius: 5px;
   padding: 32px 16px 16px;
-  transition: all 0.3s linear;
+  transition: transform $transition-timing linear;
+  transform-origin: center;
+  z-index: 0;
   box-sizing: border-box;
   &:hover {
     transform: scale(1.2);
+    z-index: 1;
   }
   &__img {
     padding: 0 3px;
@@ -41,7 +47,7 @@
     color: $blue;
     line-height: 18px;
     font-weight: 500;
-    transition: all 0.3s linear;
+    transition: color $transition-timing linear;
     margin-top: 40px;
   }
   &:hover &__title {
@@ -96,7 +102,9 @@
     border-radius: 5px;
     height: 40px;
     margin-top: 16px;
-    transition: 0.3s ease-in-out;
+    transition:
+      background $transition-timing linear,
+      color $transition-timing linear;
     box-sizing: border-box;
     &:hover {
       background: $white;
