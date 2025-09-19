@@ -45,7 +45,7 @@
     margin-top: 40px;
   }
   &:hover &__title {
-    color: #34568b;
+    color: $title-hover;
   }
   &__code {
     font-size: 10px;
@@ -84,10 +84,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #00acdc;
-    background: #00acdc;
+    border: 1px solid $gl;
+    background: $gl;
     font-size: 14px;
-    color: #fff;
+    color: $white;
     line-height: 16px;
     font-weight: bold;
     text-decoration: none;
@@ -96,11 +96,11 @@
     border-radius: 5px;
     height: 40px;
     margin-top: 16px;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
     box-sizing: border-box;
     &:hover {
-      background: #fff;
-      color: #00acdc;
+      background: $white;
+      color: $gl;
     }
   }
 }
